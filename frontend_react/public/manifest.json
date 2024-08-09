@@ -1,0 +1,20 @@
+{
+  "short_name": "Qadoor",
+  "name": "Portfolio",
+  "icons": [
+    {
+      "src": "myProfile.png",
+      "type": "image/png",
+      "sizes": "176x36"
+    },
+    {
+      "src": "myLogo.png",
+      "type": "image/png",
+      "sizes": "566x710"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
