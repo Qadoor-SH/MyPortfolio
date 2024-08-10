@@ -6,8 +6,6 @@ import { client, urlFor } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./work.scss";
 
-const workItems = ["UI/UX", "Mobile App", "React js", "ASP dot Net", "All"];
-
 const Work = () => {
   const [workFilters, setWorkFilters] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
@@ -19,7 +17,6 @@ const Work = () => {
     client
       .fetch(query)
       .then((data) => {
-        console.log("works: ", data);
         setWorks(data);
         setFilterWork(data);
         let tempItems = ["All"];
@@ -32,9 +29,7 @@ const Work = () => {
         });
         setWorkFilters((res) => [...tempItems]);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
   }, []);
   const handleWorkItem = (item) => {
     setActiveFilter(item);

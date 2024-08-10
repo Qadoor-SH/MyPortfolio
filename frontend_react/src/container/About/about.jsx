@@ -12,12 +12,9 @@ const About = () => {
     client
       .fetch(query)
       .then((data) => {
-        console.log("about: ", data);
         setAbouts(data);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
   }, []);
   return (
     <>

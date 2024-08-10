@@ -14,21 +14,15 @@ const Skills = () => {
     client
       .fetch(skillsQuery)
       .then((data) => {
-        console.log("skills: ", data);
         setSkills(data);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
     client
       .fetch(experiencesQuery)
       .then((data) => {
-        console.log("experiences: ", data);
         setExperiences(data);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
   }, []);
   return (
     <>
@@ -60,7 +54,7 @@ const Skills = () => {
               </div>
               <motion.div className="app__skills-exp-works">
                 {experience.works?.map((work) => (
-                  <>
+                  <div key={work.name}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
@@ -69,7 +63,7 @@ const Skills = () => {
                       data-tooltip-id={work.name}
                       // data-tip
                       // data-d
-                      key={work.name}
+                      // key={work.name}
                     >
                       <h4 className="bold-text">{work.name}</h4>
                       <p className="p-text">{work.company}</p>
@@ -77,7 +71,7 @@ const Skills = () => {
                     <Tooltip id={work.name} variant="light">
                       {work.desc}
                     </Tooltip>
-                  </>
+                  </div>
                 ))}
               </motion.div>
             </motion.div>

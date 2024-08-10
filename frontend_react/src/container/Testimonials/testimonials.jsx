@@ -17,21 +17,15 @@ const Testimonials = () => {
     client
       .fetch(brandsQuery)
       .then((data) => {
-        console.log("brands: ", data);
         setBrands(data);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
     client
       .fetch(testimonialsQuery)
       .then((data) => {
-        console.log("testimonials: ", data);
         setTestimonials(data);
       })
-      .catch((error) => {
-        console.log("error:", error);
-      });
+      .catch((error) => {});
   }, []);
   const currentTestimonial = testimonials[currentIndex];
   const handlePreviousTestimonial = () => {
