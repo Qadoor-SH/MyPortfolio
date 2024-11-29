@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import { images } from "../../constants";
+import { generalDetails, images, mainSkillsCircles } from "../../constants";
 
 import "./header.scss";
 import { AppWrap } from "../../wrapper";
@@ -17,7 +17,6 @@ const scaleVariants = {
   },
 };
 const Header = () => {
-  const circles = [images.redux, images.react, images.netCore];
   return (
     <div className="app__header app__flex">
       <motion.div
@@ -30,12 +29,15 @@ const Header = () => {
             <span>👋</span>
             <div style={{ marginLeft: 20 }}>
               <p className="p-text">Hello I am</p>
-              <h1 className="head-text">AbdulQader</h1>
+              <h1 className="head-text">{generalDetails.name}</h1>
             </div>
           </div>
           <div className="tag-cmp app__flex">
-            <p className="p-text">Web Developer</p>
-            <p className="p-text">Freelancer</p>
+            {generalDetails.tags.map((tag, index) => (
+              <p className="p-text" key={tag + index}>
+                {tag}
+              </p>
+            ))}
           </div>
         </div>
       </motion.div>
@@ -44,7 +46,7 @@ const Header = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="app__header-img"
       >
-        <img src={images.myProfile} alt="profile-bg" />
+        <img src={generalDetails.profile} alt="profile-bg" />
         <motion.img
           whileInView={{ scale: [0, 1] }}
           transition={{ duration: 1, ease: "easeInOut" }}
@@ -59,7 +61,7 @@ const Header = () => {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="app__header-circles"
       >
-        {circles.map((circle, index) => (
+        {mainSkillsCircles.map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="circle" />
           </div>

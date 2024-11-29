@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 
 import { client } from "../../client";
 import { AppWrap, MotionWrap } from "../../wrapper";
-import { images } from "../../constants";
+import { contacts, images, socialMediaAccounts } from "../../constants";
 import "./footer.scss";
 
 const Footer = () => {
@@ -41,17 +42,17 @@ const Footer = () => {
       <h2 className="head-text">Take a coffee & chat with me</h2>
       <div className="app__footer-cards">
         <div className="app__footer-card">
-          <a href="mailto: abdul2001sh@gmail.com" className="p-text">
+          <a href={`mailto: ${contacts.email}`} className="p-text">
             <img src={images.email} alt="email" />
-            abdul2001sh@gmail.com
+            {contacts.email}
           </a>
         </div>
         {/* </div>
       <div className="app__footer-cards"> */}
         <div className="app__footer-card">
-          <a href="tel: +967 773225233" className="p-text">
+          <a href={`tel: ${contacts.mobile}`} className="p-text">
             <img src={images.mobile} alt="mobile" />
-            +967 773225233
+            {contacts.mobile}
           </a>
         </div>
       </div>
@@ -100,6 +101,19 @@ const Footer = () => {
           </button>
         </div>
       )}
+      <div className="app__footer-accounts app__flex">
+        {socialMediaAccounts.map(({ icon, link }) => (
+          <motion.div
+            whileInView={{ opacity: [0, 1] }}
+            transition={{ duration: 0.5, type: "tween" }}
+            key={link}
+          >
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {icon}
+            </a>
+          </motion.div>
+        ))}
+      </div>
     </>
   );
 };

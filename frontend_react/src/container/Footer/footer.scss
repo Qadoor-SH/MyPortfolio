@@ -61,6 +61,7 @@
     width: 100%;
   }
 }
+
 .app__footer-cards .app__footer-card:last-child {
   background-color: #f2f7fb;
 }
@@ -129,5 +130,50 @@
   @media screen and (max-width: 768px) {
     width: 100%;
     margin: 1rem 0;
+  }
+}
+
+.app__footer-accounts {
+  width: 80%;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--white-color);
+    margin: 1rem;
+    border: 1px solid var(--lightGray-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.3s ease-in-out;
+    a {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 20px;
+      height: 20px;
+      color: var(--gray-color);
+    }
+
+    &:hover {
+      background-color: var(--secondary-color);
+      border-color: var(--secondary-color);
+
+      svg {
+        color: var(--white-color);
+      }
+    }
+    @media screen and (min-width: 500px) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 500px) {
+    display: none;
   }
 }

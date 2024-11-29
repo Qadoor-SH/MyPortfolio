@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 
-import { images } from "../../constants";
+import { generalDetails } from "../../constants";
 
 import "./navbar.scss";
 
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <img src={images.myLogo} alt="logo" />
+        <img src={generalDetails.logo} alt="logo" />
       </div>
       <ul className="app__navbar-links">
         {navItems.map((item) => (

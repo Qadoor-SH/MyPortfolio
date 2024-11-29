@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NavigationDots, SocialMedia } from "../components";
+import { copyrights } from "../constants";
 const AppWrap = (Component, idName, classNames) =>
   function HOC() {
     return (
@@ -9,8 +10,11 @@ const AppWrap = (Component, idName, classNames) =>
         <div className="app__wrapper app__flex">
           <Component />
           <div className="copyright">
-            <p className="p-text">@2024 Qadoor</p>
-            <p className="p-text">All rights reserved</p>
+            {copyrights.map((right, index) => (
+              <p className="p-text" key={right + index}>
+                {right}
+              </p>
+            ))}
           </div>
         </div>
         <NavigationDots active={idName} />

@@ -1,24 +1,15 @@
 import React from "react";
-import { BsTwitter, BsInstagram, BsTwitterX, BsWhatsapp } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
+import { socialMediaAccounts } from "../constants";
 const SocialMedia = () => {
   return (
     <div className="app__social">
-      <div>
-        <BsWhatsapp />
-      </div>
-      <div>
-        <BsTwitter />
-      </div>
-      <div>
-        <BsInstagram />
-      </div>
-      <div>
-        <BsTwitterX />
-      </div>
-      <div>
-        <FaFacebookF />
-      </div>
+      {socialMediaAccounts.map(({ icon, link }, index) => (
+        <div key={link + index}>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            {icon}
+          </a>
+        </div>
+      ))}
     </div>
   );
 };
