@@ -6,12 +6,21 @@ export default {
     {
       name: 'name',
       title: 'Name',
-      type: 'string',
+
+      type: 'object',
+      fields: [
+        {name: 'en', title: 'English', type: 'string'},
+        {name: 'ar', title: 'Arabic', type: 'string'},
+      ],
     },
     {
       name: 'company',
       title: 'Company',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {name: 'en', title: 'English', type: 'string'},
+        {name: 'ar', title: 'Arabic', type: 'string'},
+      ],
     },
     {
       name: 'imageurl',
@@ -24,7 +33,11 @@ export default {
     {
       name: 'feedback',
       title: 'Feedback',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {name: 'en', title: 'English', type: 'string'},
+        {name: 'ar', title: 'Arabic', type: 'string'},
+      ],
     },
   ],
 }
